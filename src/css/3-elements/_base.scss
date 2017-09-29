@@ -19,6 +19,9 @@ img {
 }
 
 p {
+  margin-top: map-get($margins, 'typography');
+  margin-bottom: map-get($margins, 'typography');
+
   &:first-child {
     margin-top: 0;
   }

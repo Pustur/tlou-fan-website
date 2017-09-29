@@ -13,6 +13,17 @@ $ios-ui-height-md: 25px;
 
 $container-padding: 25px;
 
+$margins: (
+  'section': 11.25vw,
+  'offset': 10vw,
+  'typography': 2rem,
+);
+
+// Z-index
+$z-index: (
+  'just-above-default': 1,
+);
+
 // Typography
 $html-font-size: 15px;
 $html-font-size-md: 17px;

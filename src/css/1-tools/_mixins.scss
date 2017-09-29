@@ -1,0 +1,16 @@
+@mixin z-index($name) {
+  z-index: map-get($z-index, $name);
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @content;
+  }
+}
+
+@mixin trbl($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
