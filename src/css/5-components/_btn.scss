@@ -1,0 +1,27 @@
+.btn {
+  background-color: $yellow;
+  color: $black;
+  font-family: $font-heading;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: $btn-height;
+  line-height: $btn-height;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  vertical-align: top;
+  transition: background-color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow-dark;
+  }
+}
+
+@include media($md-min) {
+  .btn {
+    height: $btn-height-md;
+    line-height: $btn-height-md;
+  }
+}
