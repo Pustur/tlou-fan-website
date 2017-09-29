@@ -1,4 +1,41 @@
+html {
+  font-size: $html-font-size;
+}
+
 body {
   background-color: $black;
   color: white;
+  line-height: 1.5;
+  font-family: $font-body;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include media($md-min) {
+  html {
+    font-size: $html-font-size-md;
+  }
+}
+
+@include media($lg-min) {
+  html {
+    font-size: $html-font-size-lg;
+  }
 }

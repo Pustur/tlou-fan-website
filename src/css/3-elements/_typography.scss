@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
