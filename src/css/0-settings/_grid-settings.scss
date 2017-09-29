@@ -1,0 +1,13 @@
+// Grid settings
+$column: 44px;
+$gutter: 62px;
+$grid-columns: 14;
+
+// Breakpoints
+$md: 768px;
+$lg: 1025px;
+
+$sm-max: new-breakpoint(max-width ($md - 1px));
+$md-min: new-breakpoint(min-width $md);
+$md-max: new-breakpoint(max-width ($lg - 1px));
+$lg-min: new-breakpoint(min-width $lg);
