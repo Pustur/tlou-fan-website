@@ -1,0 +1,89 @@
+.story {
+  position: relative;
+  padding-top: (map-get($margins, 'section') * 2);
+  padding-bottom: (map-get($margins, 'section') * 2);
+  background-image: url('/img/story-bg-sm.jpg');
+  background-size: cover;
+  background-position: 65% 65%;
+
+  &::before {
+    @include trbl(0, 0, 0, 0);
+
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $black;
+    opacity: 0.6;
+  }
+
+  &__content-1 {
+    margin-bottom: map-get($margins, 'typography');
+  }
+
+  &__image-2 {
+    transform: translateY(-20%);
+  }
+
+  &__title {
+    margin-left: map-get($margins, 'offset');
+  }
+
+  &__btn {
+    margin-left: map-get($margins, 'offset') * 0.5;
+    margin-top: (map-get($margins, 'typography') * 2);
+  }
+
+  .container {
+    @include z-index('just-above-default');
+
+    position: relative;
+  }
+}
+
+@include media($md-min) {
+  .story {
+    @include clearfix;
+
+    padding-bottom: map-get($margins, 'section');
+    background-image: url('/img/story-bg-md.jpg');
+
+    &__content-1,
+    &__content-2 {
+      @include span-columns(10);
+      @include shift(1);
+    }
+  }
+}
+
+@include media($md-max) {
+  .story {
+    &__content-3 {
+      display: none;
+    }
+  }
+}
+
+@include media($lg-min) {
+  .story {
+    background-image: url('/img/story-bg-lg.jpg');
+    background-attachment: fixed;
+
+    &__content-1,
+    &__content-2 {
+      @include span-columns(5);
+    }
+
+    &__content-3 {
+      @include span-columns(8);
+    }
+
+    &__image-1 {
+      @include span-columns(7 of 8);
+      @include shift(1 of 8);
+    }
+
+    &__image-2 {
+      @include span-columns(6 of 8);
+    }
+  }
+}
