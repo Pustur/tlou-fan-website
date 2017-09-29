@@ -1,18 +1,25 @@
+// Variables
 @import '0-settings/_variables.scss';
 @import "_vendor/neat/neat-helpers";
 @import "0-settings/grid-settings";
 
+// Tools
 @import '1-tools/_mixins.scss';
 
+// Generic
 @import '2-generic/_fonts.scss';
 @import '_vendor/_normalize.scss';
 @import "_vendor/neat/neat";
 
+// Elements
 @import '3-elements/_base.scss';
 @import '3-elements/_typography.scss';
 
+// Objects
 @import '4-objects/_container.scss';
 
+// Components
 @import '5-components/_btn.scss';
 
+// Utilities
 // @import '6-utilities/_.scss';
