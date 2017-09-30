@@ -18,10 +18,3 @@
     background-color: $yellow-dark;
   }
 }
-
-@include media($md-min) {
-  .btn {
-    height: $btn-height-md;
-    line-height: $btn-height-md;
-  }
-}
