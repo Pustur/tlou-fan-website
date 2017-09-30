@@ -1,0 +1,116 @@
+.left-behind {
+  position: relative;
+  padding-top: (map-get($margins, 'section') * 2);
+  padding-bottom: (map-get($margins, 'section') * 2);
+  background-image: url('/img/left-behind-bg-lg.jpg');
+  background-size: cover;
+  background-position: 60% 50%;
+
+  &::before {
+    @include trbl(0, 0, 0, 0);
+
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $black;
+    opacity: 0.6;
+  }
+
+  &__title {
+    margin-bottom: map-get($margins, 'typography');
+    margin-left: map-get($margins, 'offset');
+  }
+
+  &__btn {
+    margin-left: map-get($margins, 'offset') * 0.5;
+  }
+
+  &__container {
+    margin-top: (map-get($margins, 'typography') * 2);
+  }
+
+  &__content-3 {
+    margin-top: map-get($margins, 'typography');
+  }
+
+  .container {
+    z-index: map-get($z-index, 'just-above-default');
+    position: relative;
+  }
+}
+
+@include media($sm-max) {
+  .left-behind {
+    &__container {
+      width: 100%;
+    }
+
+    &__content-3 {
+      padding-left: $container-padding;
+      padding-right: $container-padding;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@include media($md-min) {
+  .left-behind {
+    padding-bottom: map-get($margins, 'section');
+
+    &__content-1 {
+      @include span-columns(8);
+      @include shift(1);
+    }
+
+    &__content-2 {
+      @include span-columns(12);
+
+      position: relative;
+    }
+
+    &__image {
+      @include trbl(null, ((flex-grid(1) + flex-gutter()) * -1), (map-get($margins, 'typography') * -1), null);
+
+      position: absolute;
+      width: 40%;
+    }
+
+    &__content-3 {
+      @include span-columns(9);
+      @include shift(2);
+
+      margin-top: (map-get($margins, 'typography') * 2);
+    }
+  }
+}
+
+@include media($lg-min) {
+  .left-behind {
+    background-attachment: fixed;
+
+    &__content-1 {
+      @include span-columns(6);
+      @include shift(2);
+    }
+
+    &__container {
+      display: flex;
+      align-items: center;
+      padding-bottom: map-get($margins, 'typography');
+    }
+
+    &__content-2 {
+      @include span-columns(7);
+    }
+
+    &__content-3 {
+      @include span-columns(5);
+      @include shift(1);
+
+      margin-top: 0;
+    }
+  }
+}
