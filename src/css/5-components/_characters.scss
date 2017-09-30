@@ -1,0 +1,85 @@
+.characters {
+  position: relative;
+  background-color: $brown;
+
+  &__title {
+    margin-bottom: map-get($margins, 'typography') * (3 / 4);
+    margin-left: map-get($margins, 'offset');
+  }
+
+  &__image {
+    margin-bottom: map-get($margins, 'typography');
+  }
+
+  .container {
+    @include z-index('just-above-default');
+
+    position: relative;
+  }
+}
+
+@include media($sm-max) {
+  .characters {
+    &__joel,
+    &__ellie {
+      padding-bottom: map-get($margins, 'typography');
+    }
+  }
+}
+
+@include media($md-min) {
+  .characters {
+    &::before {
+      @include trbl(0, 0, 0, 0);
+
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: $black;
+      opacity: 0.6;
+    }
+
+    &__joel,
+    &__ellie {
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: 60% 50%;
+      min-height: 100vh;
+    }
+
+    &__joel {
+      background-image: url('/img/characters-joel-bg.jpg');
+    }
+
+    &__ellie {
+      background-image: url('/img/characters-ellie-bg.jpg');
+    }
+
+    &__content {
+      @include span-columns(6);
+      @include shift(7);
+
+      padding-top: map-get($margins, 'typography') * 2;
+      padding-bottom: map-get($margins, 'typography') * 2;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@include media($lg-min) {
+  .characters {
+    &__joel,
+    &__ellie {
+      background-attachment: fixed;
+    }
+
+    &__content {
+      @include span-columns(5);
+      @include shift(8);
+    }
+  }
+}

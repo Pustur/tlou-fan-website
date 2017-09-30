@@ -16,19 +16,22 @@ h4 {
   }
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 2rem;
   margin-bottom: (map-get($margins, 'typography') * 2);
 }
 
 @include media($md-min) {
-  h2 {
+  h2,
+  .h2 {
     font-size: (48px / $html-font-size-md) * 1rem;
   }
 }
 
 @include media($lg-min) {
-  h2 {
+  h2,
+  .h2 {
     font-size: 3.6rem;
   }
 }

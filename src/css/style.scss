@@ -1,7 +1,7 @@
 // Variables
 @import '0-settings/_variables.scss';
 @import "_vendor/neat/neat-helpers";
-@import "0-settings/grid-settings";
+@import "0-settings/_grid-settings";
 
 // Tools
 @import '1-tools/_mixins.scss';
@@ -21,6 +21,7 @@
 // Components
 @import '5-components/_btn.scss';
 @import '5-components/_story.scss';
+@import '5-components/_characters.scss';
 
 // Utilities
-// @import '6-utilities/_.scss';
+@import '6-utilities/_helpers.scss';
