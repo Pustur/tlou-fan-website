@@ -2,6 +2,7 @@
 $column: 44px;
 $gutter: 62px;
 $grid-columns: 14;
+$max-width: 100%;
 
 // Breakpoints
 $md: 768px;
@@ -11,3 +12,6 @@ $sm-max: new-breakpoint(max-width ($md - 1px));
 $md-min: new-breakpoint(min-width $md);
 $md-max: new-breakpoint(max-width ($lg - 1px));
 $lg-min: new-breakpoint(min-width $lg);
+
+// Visual grid for development / debugging
+// $visual-grid: true;
