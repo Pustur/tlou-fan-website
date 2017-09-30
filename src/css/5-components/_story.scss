@@ -34,8 +34,7 @@
   }
 
   .container {
-    @include z-index('just-above-default');
-
+    z-index: map-get($z-index, 'just-above-default');
     position: relative;
   }
 }

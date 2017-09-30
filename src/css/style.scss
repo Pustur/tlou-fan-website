@@ -1,27 +1,27 @@
 // Variables
-@import '0-settings/_variables.scss';
+@import '0-settings/variables';
 @import "_vendor/neat/neat-helpers";
-@import "0-settings/_grid-settings";
+@import "0-settings/grid-settings";
 
 // Tools
-@import '1-tools/_mixins.scss';
+@import '1-tools/mixins';
 
 // Generic
-@import '2-generic/_fonts.scss';
-@import '_vendor/_normalize.scss';
+@import '2-generic/fonts';
+@import '_vendor/normalize';
 @import "_vendor/neat/neat";
 
 // Elements
-@import '3-elements/_base.scss';
-@import '3-elements/_typography.scss';
+@import '3-elements/base';
+@import '3-elements/typography';
 
 // Objects
-@import '4-objects/_container.scss';
+@import '4-objects/container';
 
 // Components
-@import '5-components/_btn.scss';
-@import '5-components/_story.scss';
-@import '5-components/_characters.scss';
+@import '5-components/btn';
+@import '5-components/story';
+@import '5-components/characters';
 
 // Utilities
-@import '6-utilities/_helpers.scss';
+@import '6-utilities/helpers';
