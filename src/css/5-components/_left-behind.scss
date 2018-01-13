@@ -50,7 +50,7 @@
       padding-right: $container-padding;
     }
 
-    &__image {
+    &__polaroid {
       display: none;
     }
   }
@@ -71,7 +71,7 @@
       position: relative;
     }
 
-    &__image {
+    &__polaroid {
       @include trbl(null, ((flex-grid(1, 12) + (flex-gutter() * (14 / 12))) * -1), (map-get($margins, 'typography') * -1), null);
 
       position: absolute;
@@ -106,7 +106,7 @@
       @include span-columns(7);
     }
 
-    &__image {
+    &__polaroid {
       right: ((flex-grid(1, 7) + (flex-gutter() * (14 / 7))) * -1);
     }
 
