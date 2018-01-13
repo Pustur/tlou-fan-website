@@ -28,6 +28,12 @@ $z-index: (
 // btn
 $btn-height: 3.2em;
 
+// left behind tv noise
+$tvNoiseWidth: 200px;
+$tvNoiseHeight: 200px;
+$tvNoiseSteps: 5; // Controls how many random positions are generated
+$tvNoiseFps: 24; // Controls the framerate
+
 // Typography
 $html-font-size: 15px;
 $html-font-size-md: 17px;
