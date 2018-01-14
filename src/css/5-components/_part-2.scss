@@ -1,0 +1,166 @@
+.part-2 {
+  position: relative;
+  padding-top: map-get($margins, 'section');
+  padding-bottom: map-get($margins, 'section');
+  background-image: url('/img/part-2-bg-lg.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    @include trbl(0, 0, 0, 0);
+
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $black;
+    opacity: 0.6;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: map-get($margins, 'section');
+  }
+
+  &__content-1,
+  &__content-2 {
+    margin-bottom: (map-get($margins, 'typography') * 2);
+  }
+
+  &__content-3,
+  &__content-4,
+  &__content-5 {
+    margin-bottom: map-get($margins, 'typography');
+  }
+
+  &__content-5 {
+    text-align: right;
+  }
+
+  &__content-6 {
+    text-align: center;
+  }
+
+  &__img-1 {
+    display: none;
+  }
+
+  &__video-link {
+    display: block;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  .container {
+    z-index: map-get($z-index, 'just-above-default');
+    position: relative;
+  }
+}
+
+@include media($sm-max) {
+  .part-2 {
+    .btn {
+      margin-top: map-get($margins, 'typography');
+    }
+  }
+}
+
+@include media($md-min) {
+  .part-2 {
+    &__content-1,
+    &__content-3 {
+      @include span-columns(10);
+      @include shift(1);
+    }
+
+    &__content-2 {
+      @include span-columns(11);
+      @include shift(2);
+    }
+
+    &__content-4,
+    &__content-5 {
+      margin-bottom: (map-get($margins, 'typography') * 2);
+    }
+
+    &__content-4 {
+      @include span-columns(6);
+      @include shift(7);
+    }
+
+    &__content-5 {
+      @include span-columns(7);
+      @include shift(-13);
+    }
+
+    &__content-6 {
+      @include span-columns(12);
+      @include shift(1);
+    }
+
+    &__wrapper-1 {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .quote {
+      border-left: 0.4rem solid $yellow;
+      padding-left: 8%;
+    }
+
+    .btn {
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@include media($lg-min) {
+  .part-2 {
+    background-attachment: fixed;
+
+    &__content-1,
+    &__content-3,
+    &__content-6 {
+      @include shift(2);
+    }
+
+    &__content-1,
+    &__content-2,
+    &__content-6 {
+      @include span-columns(8);
+    }
+
+    &__content-2,
+    &__content-6,
+    &__img-container-1 {
+      position: relative;
+    }
+
+    &__content-3 {
+      @include span-columns(5);
+
+      margin-bottom: (map-get($margins, 'typography') * 2);
+    }
+
+    &__img-1 {
+      @include span-columns(7);
+
+      position: absolute;
+      top: (map-get($margins, 'typography') * -1);
+      right: 0;
+      margin-right: 0;
+    }
+
+    .quote {
+      margin-left: 8%;
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateX(50%) translateY(-50%);
+    }
+  }
+}

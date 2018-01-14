@@ -9,6 +9,14 @@
   border: 0;
 }
 
+.yellow-text {
+  color: $yellow;
+}
+
 .yellow-dark-text {
   color: $yellow-dark;
+}
+
+.clearfix {
+  @include clearfix;
 }

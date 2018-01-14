@@ -43,6 +43,14 @@ ul {
   margin: 0;
 }
 
+blockquote {
+  margin: 0;
+}
+
+cite {
+  font-style: inherit;
+}
+
 @include media($md-min) {
   html {
     font-size: $html-font-size-md;
