@@ -1,0 +1,125 @@
+.awards {
+  padding-top: map-get($margins, 'section');
+  padding-bottom: map-get($margins, 'section');
+  background-image: url('/img/awards-bg-lg.jpg');
+  background-size: 360px 170px;
+
+  &__title,
+  &__btn-container {
+    text-align: center;
+  }
+
+  &__ratings {
+    @include clearfix;
+
+    margin-bottom: (map-get($margins, 'typography') * 2);
+
+    > li {
+      position: relative;
+      text-align: center;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        background-color: $white-transparent-border;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -13%; // Magic number
+      }
+    }
+  }
+
+  &__rating {
+    margin-bottom: 0;
+    border-bottom: 1px solid $white-transparent-border;
+  }
+
+  &__stars {
+    width: 100px;
+    height: 45px;
+    background-image: url('/img/rating-star.svg');
+    background-size: 20px 19px;
+    background-repeat: repeat-x;
+    background-position: center;
+    white-space: nowrap;
+    text-indent: 101%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  &__rated-by {
+    margin-top: (map-get($margins, 'typography') * 0.5);
+    padding-bottom: (map-get($margins, 'typography') * 0.2);
+
+    a {
+      color: white;
+    }
+  }
+}
+
+@include media($sm-max) {
+  .awards {
+    &__ratings {
+      > li {
+        @include span-columns(3 of 6);
+        @include omega(2n);
+
+        &:nth-child(n+3) {
+          margin-top: map-get($margins, 'typography');
+        }
+
+        &:nth-child(odd) {
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media($md-min) {
+  .awards {
+    &__ratings {
+      @include span-columns(12);
+      @include shift(1);
+
+      > li {
+        @include span-columns(4 of 12);
+        @include omega(3n);
+
+        &::before {
+          left: -8.8%; // Magic number
+        }
+
+        &:nth-child(3n+1) {
+          &::before {
+            content: none;
+          }
+        }
+
+        &:nth-child(n+4) {
+          margin-top: map-get($margins, 'typography');
+        }
+      }
+    }
+
+    &__stars {
+      width: 120px;
+      height: 72px;
+      background-size: 24px 23px;
+    }
+  }
+}
+
+@include media($lg-min) {
+  .awards {
+    &__stars {
+      width: 200px;
+      height: 108px;
+      background-size: 40px 38px;
+    }
+  }
+}
