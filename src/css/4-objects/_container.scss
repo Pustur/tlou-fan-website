@@ -10,3 +10,9 @@
     width: calc(100% - #{$container-padding * 2});
   }
 }
+
+@include media($xlg-min) {
+  .container {
+    max-width: 1440px;
+  }
+}
