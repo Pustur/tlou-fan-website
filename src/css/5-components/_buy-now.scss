@@ -20,6 +20,12 @@
     }
   }
 
+  &__game-title {
+    span {
+      display: block;
+    }
+  }
+
   &__cover {
     width: auto;
     height: 190px;
