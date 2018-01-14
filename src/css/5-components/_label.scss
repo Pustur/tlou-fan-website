@@ -1,0 +1,12 @@
+.label {
+  font-size: 12px;
+  opacity: 0.5;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@include media($lg-min) {
+  .label {
+    font-size: (14px / $html-font-size-lg) * 1rem;
+  }
+}

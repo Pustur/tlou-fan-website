@@ -1,0 +1,138 @@
+.buy-now {
+  color: $black;
+  background-color: $white;
+  padding-top: map-get($margins, 'section');
+  padding-bottom: map-get($margins, 'section');
+
+  &__title {
+    text-align: center;
+  }
+
+  &__games {
+    > li {
+      &:nth-child(odd) {
+        text-align: right;
+
+        img {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &__cover {
+    width: auto;
+    height: 190px;
+  }
+
+  .label {
+    margin-bottom: 0.7em;
+  }
+}
+
+@include media($sm-max) {
+  .buy-now {
+    &__games {
+      > li {
+        background-image: url('/img/fireflies-logo.svg');
+        background-size: 200% auto;
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+
+        + li {
+          margin-top: (map-get($margins, 'typography') * 3);
+        }
+
+        &:nth-child(even) {
+          background-position: 0 0;
+        }
+      }
+    }
+
+    &__prices {
+      @include clearfix;
+
+      margin-top: map-get($margins, 'typography');
+      margin-bottom: map-get($margins, 'typography');
+      text-align: center;
+
+      > li {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    &__btn-container {
+      text-align: center;
+    }
+  }
+}
+
+@include media($md-min) {
+  .buy-now {
+    background-image: url('/img/fireflies-logo.svg'), url('/img/buy-now-bg-lg.jpg');
+    background-size: auto 70%, 360px;
+    background-repeat: no-repeat, repeat;
+    background-position: center 60%, center;
+
+    &__games {
+      @include clearfix;
+
+      > li {
+        @include span-columns(7);
+
+        &:nth-child(odd) {
+          .buy-now__cover,
+          .buy-now__prices {
+            float: right;
+          }
+
+          .buy-now__prices {
+            margin-right: map-get($margins, 'typography');
+          }
+        }
+
+        &:nth-child(even) {
+          .buy-now__game-title,
+          .buy-now__btn-container {
+            @include shift(1 of 7);
+          }
+
+          .buy-now__cover,
+          .buy-now__prices {
+            float: left;
+          }
+
+          .buy-now__prices {
+            margin-left: map-get($margins, 'typography');
+          }
+        }
+      }
+    }
+
+    &__prices {
+      > li {
+        + li {
+          margin-top: (map-get($margins, 'typography') * 0.5);
+        }
+      }
+    }
+
+    &__game-title,
+    &__btn-container {
+      @include span-columns(6 of 7);
+    }
+
+    &__game-container {
+      @include span-columns(7 of 7);
+
+      margin-bottom: map-get($margins, 'typography');
+    }
+  }
+}
+
+@include media($md-max) {
+  .buy-now {
+    padding-bottom: (map-get($margins, 'section') * 1.5);
+  }
+}

@@ -37,6 +37,12 @@ p {
   }
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 @include media($md-min) {
   html {
     font-size: $html-font-size-md;
