@@ -97,6 +97,7 @@ gulp.task('server', () => {
     root: config.dist,
     port: 8000,
     livereload: true,
+    host: '0.0.0.0',
   });
 });
 
