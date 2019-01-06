@@ -50,15 +50,16 @@ const config = {
   },
 };
 
-// HTML task
-gulp.task('html', () => (
-  gulp.src(`${config.src}${config.html.path}${config.html.src}`)
-    .pipe(gulp.dest(`${config.dist}`))
-));
+// Task functions
+function htmlTask() {
+  return gulp
+    .src(`${config.src}${config.html.path}${config.html.src}`)
+    .pipe(gulp.dest(`${config.dist}`));
+}
 
-// CSS task
-gulp.task('css', () => (
-  gulp.src(`${config.src}${config.css.path}${config.css.src}`)
+function cssTask() {
+  return gulp
+    .src(`${config.src}${config.css.path}${config.css.src}`)
     .pipe(plumber())
     .pipe(config.production ? util.noop() : sourcemaps.init())
     .pipe(sass())
@@ -66,63 +67,68 @@ gulp.task('css', () => (
     .pipe(config.production ? csso() : util.noop())
     .pipe(config.production ? util.noop() : sourcemaps.write())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(`${config.dist}${config.css.path}`))
-));
+    .pipe(gulp.dest(`${config.dist}${config.css.path}`));
+}
 
-// JS task
-gulp.task('js', () => (
-  gulp.src(`${config.src}${config.js.path}script.js`)
+function jsTask() {
+  return gulp
+    .src(`${config.src}${config.js.path}script.js`)
     .pipe(babel())
     .pipe(concat('script.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(config.production ? uglify() : util.noop())
-    .pipe(gulp.dest(`${config.dist}${config.js.path}`))
-));
+    .pipe(gulp.dest(`${config.dist}${config.js.path}`));
+}
 
-// Image task
-gulp.task('img', () => (
-  gulp.src(`${config.src}${config.img.path}${config.img.src}`)
-    .pipe(gulp.dest(`${config.dist}${config.img.path}`))
-));
+function imgTask() {
+  return gulp
+    .src(`${config.src}${config.img.path}${config.img.src}`)
+    .pipe(gulp.dest(`${config.dist}${config.img.path}`));
+}
 
-// Fonts task
-gulp.task('fonts', () => (
-  gulp.src(`${config.src}${config.fonts.path}${config.fonts.src}`)
-    .pipe(gulp.dest(`${config.dist}${config.fonts.path}`))
-));
+function fontsTask() {
+  return gulp
+    .src(`${config.src}${config.fonts.path}${config.fonts.src}`)
+    .pipe(gulp.dest(`${config.dist}${config.fonts.path}`));
+}
 
-// Server task
-gulp.task('server', () => {
+function serverTask() {
   connect.server({
     root: config.dist,
     port: 8000,
     livereload: true,
     host: '0.0.0.0',
   });
-});
+}
 
-// Reload tasks
-gulp.task('reload-html', ['html'], () => (
-  gulp.src(`${config.dist}${config.html.reload}`)
-    .pipe(connect.reload())
-));
+function reloadHtmlTask() {
+  return gulp.src(`${config.dist}${config.html.reload}`).pipe(connect.reload());
+}
 
-gulp.task('reload-css', ['css'], () => (
-  gulp.src(`${config.dist}${config.css.reload}`)
-    .pipe(connect.reload())
-));
+function reloadCssTask() {
+  return gulp.src(`${config.dist}${config.css.reload}`).pipe(connect.reload());
+}
 
-gulp.task('reload-js', ['js'], () => (
-  gulp.src(`${config.dist}${config.js.reload}`)
-    .pipe(connect.reload())
-));
+function reloadJsTask() {
+  return gulp.src(`${config.dist}${config.js.reload}`).pipe(connect.reload());
+}
 
-// Watch task
-gulp.task('watch', () => {
-  gulp.watch(`${config.src}${config.html.path}${config.html.watch}`, ['reload-html']);
-  gulp.watch(`${config.src}${config.css.path}${config.css.watch}`, ['reload-css']);
-  gulp.watch(`${config.src}${config.js.path}${config.js.watch}`, ['reload-js']);
-});
+function watchTask() {
+  gulp.watch(
+    `${config.src}${config.html.path}${config.html.watch}`,
+    gulp.series(htmlTask, reloadHtmlTask),
+  );
+  gulp.watch(
+    `${config.src}${config.css.path}${config.css.watch}`,
+    gulp.series(cssTask, reloadCssTask),
+  );
+  gulp.watch(
+    `${config.src}${config.js.path}${config.js.watch}`,
+    gulp.series(jsTask, reloadJsTask),
+  );
+}
 
-// Default task
-gulp.task('default', ['html', 'css', 'js', 'img', 'fonts', 'server', 'watch']);
+exports.default = gulp.series(
+  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask),
+  gulp.parallel(serverTask, watchTask),
+);
