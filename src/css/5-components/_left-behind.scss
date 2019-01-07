@@ -31,8 +31,8 @@
     left: 0;
     bottom: 16.7%; // PERF: Reduce area to repaint
     right: 0;
-    animation: tv-noise (($tvNoiseSteps / $tvNoiseFps) * 1s) steps(1) infinite;
-    background-size: $tvNoiseWidth $tvNoiseHeight;
+    animation: tv-noise (($tv-noise-steps / $tv-noise-fps) * 1s) steps(1) infinite;
+    background-size: $tv-noise-width $tv-noise-height;
     background-image: url('/img/left-behind-tv-noise.jpg');
   }
 
@@ -137,9 +137,9 @@
 }
 
 @keyframes tv-noise {
-  @for $i from 0 through $tvNoiseSteps {
-    #{($i / $tvNoiseSteps) * 100%} {
-      background-position: (random($tvNoiseWidth) * 1px) (random($tvNoiseHeight) * 1px);
+  @for $i from 0 through $tv-noise-steps {
+    #{($i / $tv-noise-steps) * 100%} {
+      background-position: (random($tv-noise-width) * 1px) (random($tv-noise-height) * 1px);
     }
   }
 }
