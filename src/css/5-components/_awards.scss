@@ -9,6 +9,59 @@
     text-align: center;
   }
 
+  &__carousels {
+    margin-bottom: map-get($margins, 'section');
+  }
+
+  &__carousel {
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - #{$scrollbar-width});
+
+    &-overlay {
+      @include trbl(0, 0, 0, 0);
+
+      position: absolute;
+    }
+
+    &-list {
+      width: calc(100% + #{$scrollbar-width});
+      height: calc(#{1em * $carousel-items-to-show} + #{$carousel-items-spacing * ($carousel-items-to-show - 1)});
+      overflow-x: hidden;
+      overflow-y: scroll;
+      padding-top: calc(1em + #{$carousel-items-spacing});
+      padding-bottom: calc(1em + #{$carousel-items-spacing});
+      padding-left: strip-unit(flex-gutter()) * 1vw;
+      border-left: 4px solid $yellow;
+      font-size: 20px;
+      font-family: $font-heading;
+      line-height: 1;
+    }
+
+    &-item {
+      opacity: 0.25;
+      transition: opacity 0.4s ease;
+      white-space: nowrap;
+
+      & + & {
+        margin-top: $carousel-items-spacing;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &-name {
+      text-transform: uppercase;
+    }
+
+    &-awarded {
+      margin-left: 1rem;
+      color: $yellow;
+    }
+  }
+
   &__ratings {
     @include clearfix;
 
@@ -61,6 +114,10 @@
 
 @include media($sm-max) {
   .awards {
+    &__events {
+      display: none;
+    }
+
     &__ratings {
       > li {
         @include span-columns(3 of 6);
@@ -82,6 +139,60 @@
 
 @include media($md-min) {
   .awards {
+    &__carousels {
+      display: flex;
+    }
+
+    &__events {
+      @include span-columns(4);
+      @include shift(2);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 40px;
+      font-family: $font-heading;
+      text-transform: uppercase;
+    }
+
+    &__source,
+    &__year {
+      flex: 1 0 50%;
+      width: 100%;
+      line-height: 1;
+      text-align: right;
+      position: relative;
+
+      &-item {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__year {
+      color: $yellow;
+
+      &-item {
+        bottom: 0;
+      }
+    }
+
+    &__carousel {
+      @include span-columns(8);
+
+      &-list {
+        font-size: 24px;
+        border-left-width: 6px;
+      }
+    }
+
     &__ratings {
       @include span-columns(12);
       @include shift(1);
@@ -116,6 +227,26 @@
 
 @include media($lg-min) {
   .awards {
+    &__carousels {
+      background-image: url(/img/laurel.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    &__events {
+      font-size: 60px;
+    }
+
+    &__carousel {
+      &-list {
+        font-size: 40px;
+        border-left-width: 8px;
+      }
+    }
+
     &__stars {
       width: 200px;
       height: 108px;
