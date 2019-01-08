@@ -48,6 +48,11 @@ const config = {
     path: 'fonts/',
     src: '**/*.{eot,otf,svg,ttf,woff,woff2}',
   },
+
+  assets: {
+    path: 'assets/',
+    src: '**/*',
+  },
 };
 
 // Task functions
@@ -92,6 +97,12 @@ function fontsTask() {
     .pipe(gulp.dest(`${config.dist}${config.fonts.path}`));
 }
 
+function assetsTask() {
+  return gulp
+    .src(`${config.src}${config.assets.path}${config.assets.src}`)
+    .pipe(gulp.dest(`${config.dist}`));
+}
+
 function serverTask() {
   connect.server({
     root: config.dist,
@@ -129,6 +140,6 @@ function watchTask() {
 }
 
 exports.default = gulp.series(
-  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask),
+  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask,assetsTask),
   gulp.parallel(serverTask, watchTask),
 );
