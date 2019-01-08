@@ -139,6 +139,10 @@ function watchTask() {
   );
 }
 
+exports.build = gulp.series(
+  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask, assetsTask),
+);
+
 exports.default = gulp.series(
   gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask, assetsTask),
   gulp.parallel(serverTask, watchTask),
