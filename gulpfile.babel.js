@@ -140,6 +140,6 @@ function watchTask() {
 }
 
 exports.default = gulp.series(
-  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask,assetsTask),
+  gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask, assetsTask),
   gulp.parallel(serverTask, watchTask),
 );
