@@ -2,6 +2,8 @@
 
 > A fanmade website that pays homage to my favourite game of all time: The Last of Us
 
+You can see it live [here](https://tlou-fan-website.netlify.com/).
+
 ## Technologies
 
 - HTML5
@@ -48,3 +50,7 @@ For an optimized production build, run the following command:
 ```bash
 $ gulp --production
 ```
+
+## License
+
+[MIT](LICENSE)
