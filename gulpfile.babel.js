@@ -1,9 +1,11 @@
 import autoprefixer from 'gulp-autoprefixer';
 import babel from 'gulp-babel';
+import clean from 'gulp-clean';
 import concat from 'gulp-concat';
 import connect from 'gulp-connect';
 import csso from 'gulp-csso';
 import gulp from 'gulp';
+import htmlmin from 'gulp-htmlmin';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
@@ -56,9 +58,16 @@ const config = {
 };
 
 // Task functions
+function cleanTask() {
+  return gulp.src(config.dist, { read: false, allowEmpty: true }).pipe(clean());
+}
+
 function htmlTask() {
   return gulp
     .src(`${config.src}${config.html.path}${config.html.src}`)
+    .pipe(
+      config.production ? htmlmin({ collapseWhitespace: true }) : util.noop(),
+    )
     .pipe(gulp.dest(config.dist));
 }
 
@@ -140,10 +149,12 @@ function watchTask() {
 }
 
 exports.build = gulp.series(
+  cleanTask,
   gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask, assetsTask),
 );
 
 exports.default = gulp.series(
+  cleanTask,
   gulp.parallel(htmlTask, cssTask, jsTask, imgTask, fontsTask, assetsTask),
   gulp.parallel(serverTask, watchTask),
 );
