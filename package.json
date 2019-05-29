@@ -1,6 +1,6 @@
 {
   "name": "the-last-of-us-fan-website",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A website as a tribute to the fantastic game The Last of Us",
   "main": "",
   "scripts": {
@@ -8,6 +8,13 @@
     "lint:css": "stylelint \"**/*.scss\"",
     "lint:js": "eslint \"**/*.js\"",
     "lint": "npm run lint:css && npm run lint:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pustur/tlou-fan-website"
+  },
+  "bugs": {
+    "url": "https://github.com/Pustur/tlou-fan-website/issues"
   },
   "author": "Loris Bettazza <loris.bettazza@gmail.com>",
   "license": "MIT",
