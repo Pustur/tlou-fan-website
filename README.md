@@ -16,22 +16,13 @@ You can see it live [here](https://tlou-fan-website.netlify.com/).
 ## Instructions
 
 You'll need `node` and `gulp` to run and compile the project.  
-A node version too high will break the build, so I found that node `6.x.x` works.
-
-If you use `nvm`, just run:
-
-```bash
-$ nvm install
-```
-to install a suitable version of node.
-
-Then, you should install the gulp-cli using:
+Install `gulp-cli` with:
 
 ```bash
 $ npm install -g gulp-cli
 ```
 
-Almost there, now install all dependencies with:
+Then install all dependencies with:
 
 ```bash
 $ npm install
@@ -45,10 +36,16 @@ $ gulp
 
 To compile and serve the files at [localhost:8000](http://localhost:8000/).
 
-For an optimized production build, run the following command:
+For an optimized production build, add the production flag:
 
 ```bash
 $ gulp --production
+```
+
+If you just want to build the compiled files without spinning up the development server and watch tasks you can simply use
+
+```bash
+$ gulp build --production
 ```
 
 ## License
