@@ -59,7 +59,7 @@ const config = {
 function htmlTask() {
   return gulp
     .src(`${config.src}${config.html.path}${config.html.src}`)
-    .pipe(gulp.dest(`${config.dist}`));
+    .pipe(gulp.dest(config.dist));
 }
 
 function cssTask() {
@@ -100,7 +100,7 @@ function fontsTask() {
 function assetsTask() {
   return gulp
     .src(`${config.src}${config.assets.path}${config.assets.src}`)
-    .pipe(gulp.dest(`${config.dist}`));
+    .pipe(gulp.dest(config.dist));
 }
 
 function serverTask() {
