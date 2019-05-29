@@ -4,9 +4,8 @@
   "description": "A website as a tribute to the fantastic game The Last of Us",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:css": "stylelint \"**/*.scss\"",
-    "lint:js": "eslint \"**/*.js\"",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:js": "eslint \"src/**/*.js\"",
     "lint": "npm run lint:css && npm run lint:js"
   },
   "repository": {
