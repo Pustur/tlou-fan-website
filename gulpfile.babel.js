@@ -6,12 +6,19 @@ import connect from 'gulp-connect';
 import csso from 'gulp-csso';
 import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
+import parseArgs from 'minimist';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
+import through from 'through2';
 import uglify from 'gulp-uglify';
-import util from 'gulp-util';
+
+// Replacement for gulp-util
+const util = {
+  env: parseArgs(process.argv.slice(2)),
+  noop: through.obj,
+};
 
 const config = {
   src: './src/',
