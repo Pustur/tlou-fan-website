@@ -37,8 +37,9 @@
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
-    "gulp-util": "3.0.8",
+    "minimist": "1.2.5",
     "stylelint": "13.3.2",
-    "stylelint-config-standard": "20.0.0"
+    "stylelint-config-standard": "20.0.0",
+    "through2": "3.0.1"
   }
 }
