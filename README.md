@@ -8,7 +8,7 @@ You can see it live [here](https://tlou-fan-website.netlify.app/).
 
 - HTML5
 - CSS
-- JavaScript (with jQuery)
+- JavaScript
 - Gulp
 - Babel
 - Eslint / Stylelint

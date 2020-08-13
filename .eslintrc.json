@@ -1,8 +1,7 @@
 {
   "extends": ["airbnb-base", "prettier"],
   "env": {
-    "browser": true,
-    "jquery": true
+    "browser": true
   },
   "rules": {
     "arrow-parens": "off",
