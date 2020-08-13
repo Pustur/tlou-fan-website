@@ -39,7 +39,6 @@
     "gulp-uglify": "3.0.2",
     "minimist": "1.2.5",
     "stylelint": "13.3.2",
-    "stylelint-config-standard": "20.0.0",
-    "through2": "3.0.1"
+    "stylelint-config-standard": "20.0.0"
   }
 }
