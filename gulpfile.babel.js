@@ -7,7 +7,6 @@ import connect from 'gulp-connect';
 import csso from 'gulp-csso';
 import gulp from 'gulp';
 import htmlmin from 'gulp-htmlmin';
-import parseArgs from 'minimist';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
@@ -15,16 +14,13 @@ import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
 
 // Replacement for gulp-util
-const util = {
-  env: parseArgs(process.argv.slice(2)),
-  noop: () => new PassThrough({ objectMode: true }),
-};
+const noop = () => new PassThrough({ objectMode: true });
 
 const config = {
   src: './src/',
   dist: './dist/',
 
-  production: Boolean(util.env.production),
+  production: process.env.NODE_ENV === 'production',
 
   html: {
     path: 'html/',
@@ -72,9 +68,7 @@ function cleanTask() {
 function htmlTask() {
   return gulp
     .src(`${config.src}${config.html.path}${config.html.src}`)
-    .pipe(
-      config.production ? htmlmin({ collapseWhitespace: true }) : util.noop(),
-    )
+    .pipe(config.production ? htmlmin({ collapseWhitespace: true }) : noop())
     .pipe(gulp.dest(config.dist));
 }
 
@@ -82,11 +76,11 @@ function cssTask() {
   return gulp
     .src(`${config.src}${config.css.path}${config.css.src}`)
     .pipe(plumber())
-    .pipe(config.production ? util.noop() : sourcemaps.init())
+    .pipe(config.production ? noop() : sourcemaps.init())
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(config.production ? csso() : util.noop())
-    .pipe(config.production ? util.noop() : sourcemaps.write())
+    .pipe(config.production ? csso() : noop())
+    .pipe(config.production ? noop() : sourcemaps.write())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(`${config.dist}${config.css.path}`));
 }
@@ -97,7 +91,7 @@ function jsTask() {
     .pipe(babel())
     .pipe(concat('script.js'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(config.production ? uglify() : util.noop())
+    .pipe(config.production ? uglify() : noop())
     .pipe(gulp.dest(`${config.dist}${config.js.path}`));
 }
 

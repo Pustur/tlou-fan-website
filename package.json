@@ -5,6 +5,9 @@
   "main": "",
   "scripts": {
     "test": "npm run lint",
+    "dev": "gulp",
+    "dev:prod": "NODE_ENV=production gulp",
+    "build": "NODE_ENV=production gulp build",
     "format": "prettier --write .",
     "lint:css": "stylelint \"src/**/*.scss\"",
     "lint:js": "eslint \"src/**/*.js\"",
@@ -39,7 +42,6 @@
     "gulp-sass": "4.1.0",
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
-    "minimist": "1.2.5",
     "prettier": "2.0.5",
     "stylelint": "13.6.1",
     "stylelint-config-prettier": "8.0.2",

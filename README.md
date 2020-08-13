@@ -28,24 +28,22 @@ Then install all dependencies with:
 $ npm install
 ```
 
-And finally run:
+And finally, to compile and serve the files at [localhost:8000](http://localhost:8000/), run:
 
 ```bash
-$ gulp
+$ npm run dev
 ```
 
-To compile and serve the files at [localhost:8000](http://localhost:8000/).
-
-For an optimized production build, add the production flag:
+For an optimized production build, run the following command:
 
 ```bash
-$ gulp --production
+$ npm run dev:prod
 ```
 
-If you just want to build the compiled files without spinning up the development server and watch tasks you can simply use
+If you just want to build the compiled files without spinning up the development server and watch tasks you can simply use:
 
 ```bash
-$ gulp build --production
+$ npm run build
 ```
 
 ## License
