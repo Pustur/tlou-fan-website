@@ -10,7 +10,7 @@ const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 // Replacement for gulp-util
 const noop = () => new PassThrough({ objectMode: true });
@@ -89,7 +89,7 @@ function jsTask() {
     .src(`${config.src}${config.js.path}script.js`)
     .pipe(concat('script.js'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(config.production ? uglify() : noop())
+    .pipe(config.production ? terser() : noop())
     .pipe(gulp.dest(`${config.dist}${config.js.path}`));
 }
 
