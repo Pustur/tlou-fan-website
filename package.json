@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "npm run lint",
+    "format": "prettier --write .",
     "lint:css": "stylelint \"src/**/*.scss\"",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint": "npm run lint:css && npm run lint:js"
