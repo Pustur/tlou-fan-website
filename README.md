@@ -10,7 +10,6 @@ You can see it live [here](https://tlou-fan-website.netlify.app/).
 - CSS
 - JavaScript
 - Gulp
-- Babel
 - Eslint / Stylelint
 
 ## Instructions
