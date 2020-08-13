@@ -1,17 +1,16 @@
-import { PassThrough } from 'stream';
-import autoprefixer from 'gulp-autoprefixer';
-import babel from 'gulp-babel';
-import clean from 'gulp-clean';
-import concat from 'gulp-concat';
-import connect from 'gulp-connect';
-import csso from 'gulp-csso';
-import gulp from 'gulp';
-import htmlmin from 'gulp-htmlmin';
-import plumber from 'gulp-plumber';
-import rename from 'gulp-rename';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
-import uglify from 'gulp-uglify';
+const { PassThrough } = require('stream');
+const autoprefixer = require('gulp-autoprefixer');
+const clean = require('gulp-clean');
+const concat = require('gulp-concat');
+const connect = require('gulp-connect');
+const csso = require('gulp-csso');
+const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
 
 // Replacement for gulp-util
 const noop = () => new PassThrough({ objectMode: true });
@@ -88,7 +87,6 @@ function cssTask() {
 function jsTask() {
   return gulp
     .src(`${config.src}${config.js.path}script.js`)
-    .pipe(babel())
     .pipe(concat('script.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(config.production ? uglify() : noop())
