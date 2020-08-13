@@ -1,3 +1,4 @@
+import { PassThrough } from 'stream';
 import autoprefixer from 'gulp-autoprefixer';
 import babel from 'gulp-babel';
 import clean from 'gulp-clean';
@@ -11,13 +12,12 @@ import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
-import through from 'through2';
 import uglify from 'gulp-uglify';
 
 // Replacement for gulp-util
 const util = {
   env: parseArgs(process.argv.slice(2)),
-  noop: through.obj,
+  noop: () => new PassThrough({ objectMode: true }),
 };
 
 const config = {
