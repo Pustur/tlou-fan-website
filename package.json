@@ -5,6 +5,9 @@
   "main": "",
   "scripts": {
     "test": "npm run lint",
+    "dev": "gulp",
+    "dev:prod": "NODE_ENV=production gulp",
+    "build": "NODE_ENV=production gulp build",
     "format": "prettier --write .",
     "lint:css": "stylelint \"src/**/*.scss\"",
     "lint:js": "eslint \"src/**/*.js\"",
