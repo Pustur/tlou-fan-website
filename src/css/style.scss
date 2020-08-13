@@ -1,8 +1,8 @@
 // Variables
 @import '0-settings/variables';
-@import "_vendor/neat/neat-helpers";
-@import "0-settings/functions";
-@import "0-settings/grid-settings";
+@import '_vendor/neat/neat-helpers';
+@import '0-settings/functions';
+@import '0-settings/grid-settings';
 
 // Tools
 @import '1-tools/mixins';
@@ -10,7 +10,7 @@
 // Generic
 @import '2-generic/fonts';
 @import '_vendor/normalize';
-@import "_vendor/neat/neat";
+@import '_vendor/neat/neat';
 
 // Elements
 @import '3-elements/base';

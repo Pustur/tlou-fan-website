@@ -76,7 +76,8 @@
 
 @include media($md-min) {
   .buy-now {
-    background-image: url('/img/fireflies-logo.svg'), url('/img/buy-now-bg-lg.jpg');
+    background-image: url('/img/fireflies-logo.svg'),
+      url('/img/buy-now-bg-lg.jpg');
     background-size: auto 70%, 360px;
     background-repeat: no-repeat, repeat;
     background-position: center 60%, center;

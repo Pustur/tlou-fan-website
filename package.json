@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "npm run lint",
+    "format": "prettier --write .",
     "lint:css": "stylelint \"src/**/*.scss\"",
     "lint:js": "eslint \"src/**/*.js\"",
     "lint": "npm run lint:css && npm run lint:js"
@@ -23,6 +24,7 @@
     "babel-preset-env": "1.7.0",
     "eslint": "7.6.0",
     "eslint-config-airbnb-base": "14.2.0",
+    "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "7.0.1",
@@ -38,7 +40,9 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
     "minimist": "1.2.5",
+    "prettier": "2.0.5",
     "stylelint": "13.6.1",
+    "stylelint-config-prettier": "8.0.2",
     "stylelint-config-standard": "20.0.0"
   }
 }

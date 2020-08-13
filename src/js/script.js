@@ -8,19 +8,13 @@ $(() => {
 
   function applyClasses(index) {
     $allItems.each((_, items) => {
-      $(items)
-        .removeClass('active')
-        .eq(index)
-        .addClass('active');
+      $(items).removeClass('active').eq(index).addClass('active');
     });
   }
 
   function animateScroll($list) {
     const marginBetweenItems = 10;
-    const itemHeight = $list
-      .find('li')
-      .eq(0)
-      .height();
+    const itemHeight = $list.find('li').eq(0).height();
 
     $list.stop(true, true).animate({
       scrollTop: `${itemHeight * counter + marginBetweenItems * counter}px`,

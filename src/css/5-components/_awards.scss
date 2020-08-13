@@ -26,7 +26,11 @@
 
     &-list {
       width: calc(100% + #{$scrollbar-width});
-      height: calc(#{1em * $carousel-items-to-show} + #{$carousel-items-spacing * ($carousel-items-to-show - 1)});
+      height: calc(
+        #{1em * $carousel-items-to-show} + #{$carousel-items-spacing * (
+            $carousel-items-to-show - 1
+          )}
+      );
       overflow-x: hidden;
       overflow-y: scroll;
       padding-top: calc(1em + #{$carousel-items-spacing});
@@ -123,7 +127,7 @@
         @include span-columns(3 of 6);
         @include omega(2n);
 
-        &:nth-child(n+3) {
+        &:nth-child(n + 3) {
           margin-top: map-get($margins, 'typography');
         }
 
@@ -206,13 +210,13 @@
           left: -8.8%; // Magic number
         }
 
-        &:nth-child(3n+1) {
+        &:nth-child(3n + 1) {
           &::before {
             content: none;
           }
         }
 
-        &:nth-child(n+4) {
+        &:nth-child(n + 4) {
           margin-top: map-get($margins, 'typography');
         }
       }
