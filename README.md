@@ -1,6 +1,6 @@
 # The Last of Us — Fan Website
 
-> A fanmade website that pays homage to my favourite game of all time: The Last of Us
+> A fanmade website that pays homage to my favorite game of all time: The Last of Us
 
 You can see it live [here](https://tlou-fan-website.netlify.app/).
 
