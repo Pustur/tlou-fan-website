@@ -111,13 +111,14 @@ function assetsTask() {
     .pipe(gulp.dest(config.dist));
 }
 
-function serverTask() {
+function serverTask(done) {
   connect.server({
     root: config.dist,
     port: 8000,
     livereload: true,
     host: '0.0.0.0',
   });
+  done();
 }
 
 function reloadHtmlTask() {
@@ -132,7 +133,7 @@ function reloadJsTask() {
   return gulp.src(`${config.dist}${config.js.reload}`).pipe(connect.reload());
 }
 
-function watchTask() {
+function watchTask(done) {
   gulp.watch(
     `${config.src}${config.html.path}${config.html.watch}`,
     gulp.series(htmlTask, reloadHtmlTask),
@@ -145,6 +146,7 @@ function watchTask() {
     `${config.src}${config.js.path}${config.js.watch}`,
     gulp.series(jsTask, reloadJsTask),
   );
+  done();
 }
 
 exports.build = gulp.series(
