@@ -3,7 +3,7 @@
   background-color: $brown;
 
   &__title {
-    margin-bottom: map-get($margins, 'typography') * (3 / 4);
+    margin-bottom: map-get($margins, 'typography') * (3 * 0.25);
     margin-left: map-get($margins, 'offset');
   }
 

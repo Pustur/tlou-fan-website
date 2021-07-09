@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .label {
   font-size: 12px;
   opacity: 0.5;
@@ -7,6 +9,6 @@
 
 @include media($lg-min) {
   .label {
-    font-size: (14px / $html-font-size-lg) * 1rem;
+    font-size: math.div(14px, $html-font-size-lg) * 1rem;
   }
 }

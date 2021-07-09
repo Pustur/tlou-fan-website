@@ -1,3 +1,5 @@
+@use "sass:math";
+
 h1,
 h2,
 .h2,
@@ -26,19 +28,19 @@ h2,
 
 h3,
 .h3 {
-  font-size: (20px / $html-font-size) * 1rem;
+  font-size: math.div(20px, $html-font-size) * 1rem;
   line-height: 1.2;
 }
 
 @include media($md-min) {
   h2,
   .h2 {
-    font-size: (48px / $html-font-size-md) * 1rem;
+    font-size: math.div(48px, $html-font-size-md) * 1rem;
   }
 
   h3,
   .h3 {
-    font-size: (24px / $html-font-size-md) * 1rem;
+    font-size: math.div(24px, $html-font-size-md) * 1rem;
   }
 }
 

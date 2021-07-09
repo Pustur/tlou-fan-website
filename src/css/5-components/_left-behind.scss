@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .left-behind {
   position: relative;
   padding-top: (map-get($margins, 'section') * 2);
@@ -31,7 +33,7 @@
     left: 0;
     bottom: 16.7%; // PERF: Reduce area to repaint
     right: 0;
-    animation: tv-noise (($tv-noise-steps / $tv-noise-fps) * 1s) steps(1)
+    animation: tv-noise (math.div($tv-noise-steps, $tv-noise-fps) * 1s) steps(1)
       infinite;
     background-size: $tv-noise-width $tv-noise-height;
     background-image: url('/img/left-behind-tv-noise.jpg');
@@ -92,7 +94,7 @@
     &__polaroid {
       @include trbl(
         null,
-        ((flex-grid(1, 12) + (flex-gutter() * (14 / 12))) * -1),
+        ((flex-grid(1, 12) + (flex-gutter() * math.div(14, 12))) * -1),
         (map-get($margins, 'typography') * -1),
         null
       );
@@ -130,7 +132,7 @@
     }
 
     &__polaroid {
-      right: ((flex-grid(1, 7) + (flex-gutter() * (14 / 7))) * -1);
+      right: ((flex-grid(1, 7) + (flex-gutter() * math.div(14, 7))) * -1);
     }
 
     &__content-3 {
@@ -144,7 +146,7 @@
 
 @keyframes tv-noise {
   @for $i from 0 through $tv-noise-steps {
-    #{($i / $tv-noise-steps) * 100%} {
+    #{math.div($i, $tv-noise-steps) * 100%} {
       background-position: (random($tv-noise-width) * 1px)
         (random($tv-noise-height) * 1px);
     }

@@ -1,19 +1,21 @@
+@use "sass:math";
+
 .quote {
   font-family: $font-quote;
   font-style: italic;
-  font-size: (27px / $html-font-size) * 1rem;
+  font-size: math.div(27px, $html-font-size) * 1rem;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
 }
 
 @include media($md-min) {
   .quote {
-    font-size: (30px / $html-font-size-md) * 1rem;
+    font-size: math.div(30px, $html-font-size-md) * 1rem;
   }
 }
 
 @include media($lg-min) {
   .quote {
-    font-size: (40px / $html-font-size-lg) * 1rem;
+    font-size: math.div(40px, $html-font-size-lg) * 1rem;
   }
 }

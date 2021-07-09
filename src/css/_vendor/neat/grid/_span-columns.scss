@@ -50,6 +50,8 @@
 ///     margin-right: 0;
 ///   }
 
+@use "sass:math";
+
 @mixin span-columns($span: $columns of $container-columns, $display: block) {
   $columns: nth($span, 1);
   $container-columns: container-span($span);
@@ -63,7 +65,7 @@
 
   @if $display-table  {
     display: table-cell;
-    width: percentage($columns / $container-columns);
+    width: percentage(math.div($columns, $container-columns));
   } @else {
     float: #{$opposite-direction};
 

@@ -8,7 +8,7 @@ const gulp = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const terser = require('gulp-terser');
 
