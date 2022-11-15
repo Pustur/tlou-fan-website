@@ -1,5 +1,7 @@
+@use 'sass:map';
+
 .footer {
-  padding: map-get($margins, 'typography');
+  padding: map.get($margins, 'typography');
   background-image: url('/img/awards-bg-lg.jpg');
   background-size: 360px 170px;
   color: #8a918e;

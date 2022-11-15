@@ -1,7 +1,9 @@
+@use 'sass:map';
+
 .story {
   position: relative;
-  padding-top: (map-get($margins, 'section') * 2);
-  padding-bottom: (map-get($margins, 'section') * 2);
+  padding-top: (map.get($margins, 'section') * 2);
+  padding-bottom: (map.get($margins, 'section') * 2);
   background-image: url('/img/story-bg-sm.jpg');
   background-size: cover;
   background-position: 65% 65%;
@@ -17,7 +19,7 @@
   }
 
   &__content-1 {
-    margin-bottom: map-get($margins, 'typography');
+    margin-bottom: map.get($margins, 'typography');
   }
 
   &__image-2 {
@@ -25,16 +27,16 @@
   }
 
   &__title {
-    margin-left: map-get($margins, 'offset');
+    margin-left: map.get($margins, 'offset');
   }
 
   &__btn {
-    margin-left: map-get($margins, 'offset') * 0.5;
-    margin-top: (map-get($margins, 'typography') * 2);
+    margin-left: map.get($margins, 'offset') * 0.5;
+    margin-top: (map.get($margins, 'typography') * 2);
   }
 
   .container {
-    z-index: map-get($z-index, 'just-above-default');
+    z-index: map.get($z-index, 'just-above-default');
     position: relative;
   }
 }
@@ -43,7 +45,7 @@
   .story {
     @include clearfix;
 
-    padding-bottom: map-get($margins, 'section');
+    padding-bottom: map.get($margins, 'section');
     background-image: url('/img/story-bg-md.jpg');
 
     &__content-1,

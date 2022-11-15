@@ -3,6 +3,9 @@
   "env": {
     "browser": true
   },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
   "rules": {
     "arrow-parens": "off",
     "arrow-body-style": "off",

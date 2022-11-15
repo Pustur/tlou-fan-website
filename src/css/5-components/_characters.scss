@@ -1,14 +1,16 @@
+@use 'sass:map';
+
 .characters {
   position: relative;
   background-color: $brown;
 
   &__title {
-    margin-bottom: map-get($margins, 'typography') * (3 * 0.25);
-    margin-left: map-get($margins, 'offset');
+    margin-bottom: map.get($margins, 'typography') * (3 * 0.25);
+    margin-left: map.get($margins, 'offset');
   }
 
   &__image {
-    margin-bottom: map-get($margins, 'typography');
+    margin-bottom: map.get($margins, 'typography');
   }
 }
 
@@ -16,7 +18,7 @@
   .characters {
     &__joel,
     &__ellie {
-      padding-bottom: map-get($margins, 'typography');
+      padding-bottom: map.get($margins, 'typography');
     }
   }
 }
@@ -54,8 +56,8 @@
       @include span-columns(6);
       @include shift(7);
 
-      padding-top: map-get($margins, 'typography') * 2;
-      padding-bottom: map-get($margins, 'typography') * 2;
+      padding-top: map.get($margins, 'typography') * 2;
+      padding-bottom: map.get($margins, 'typography') * 2;
     }
 
     &__image {
@@ -63,7 +65,7 @@
     }
 
     .container {
-      z-index: map-get($z-index, 'just-above-default');
+      z-index: map.get($z-index, 'just-above-default');
       position: relative;
     }
   }

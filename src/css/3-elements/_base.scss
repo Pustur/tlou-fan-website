@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 html {
   font-size: $html-font-size;
 }
@@ -25,8 +27,8 @@ img {
 }
 
 p {
-  margin-top: map-get($margins, 'typography');
-  margin-bottom: map-get($margins, 'typography');
+  margin-top: map.get($margins, 'typography');
+  margin-bottom: map.get($margins, 'typography');
 
   &:first-child {
     margin-top: 0;

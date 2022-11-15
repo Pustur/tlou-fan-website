@@ -1,6 +1,8 @@
+@use 'sass:map';
+
 .awards {
-  padding-top: map-get($margins, 'section');
-  padding-bottom: map-get($margins, 'section');
+  padding-top: map.get($margins, 'section');
+  padding-bottom: map.get($margins, 'section');
   background-image: url('/img/awards-bg-lg.jpg');
   background-size: 360px 170px;
 
@@ -10,7 +12,7 @@
   }
 
   &__carousels {
-    margin-bottom: map-get($margins, 'section');
+    margin-bottom: map.get($margins, 'section');
   }
 
   &__carousel {
@@ -69,7 +71,7 @@
   &__ratings {
     @include clearfix;
 
-    margin-bottom: (map-get($margins, 'typography') * 2);
+    margin-bottom: (map.get($margins, 'typography') * 2);
 
     > li {
       position: relative;
@@ -107,8 +109,8 @@
   }
 
   &__rated-by {
-    margin-top: (map-get($margins, 'typography') * 0.5);
-    padding-bottom: (map-get($margins, 'typography') * 0.2);
+    margin-top: (map.get($margins, 'typography') * 0.5);
+    padding-bottom: (map.get($margins, 'typography') * 0.2);
 
     a {
       color: white;
@@ -128,7 +130,7 @@
         @include omega(2n);
 
         &:nth-child(n + 3) {
-          margin-top: map-get($margins, 'typography');
+          margin-top: map.get($margins, 'typography');
         }
 
         &:nth-child(odd) {
@@ -217,7 +219,7 @@
         }
 
         &:nth-child(n + 4) {
-          margin-top: map-get($margins, 'typography');
+          margin-top: map.get($margins, 'typography');
         }
       }
     }
@@ -233,7 +235,7 @@
 @include media($lg-min) {
   .awards {
     &__carousels {
-      background-image: url(/img/laurel.svg);
+      background-image: url('/img/laurel.svg');
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;

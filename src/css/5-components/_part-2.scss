@@ -1,7 +1,9 @@
+@use 'sass:map';
+
 .part-2 {
   position: relative;
-  padding-top: map-get($margins, 'section');
-  padding-bottom: map-get($margins, 'section');
+  padding-top: map.get($margins, 'section');
+  padding-bottom: map.get($margins, 'section');
   background-image: url('/img/part-2-bg-lg.jpg');
   background-size: cover;
   background-position: center;
@@ -18,18 +20,18 @@
 
   &__title {
     text-align: center;
-    margin-bottom: map-get($margins, 'section');
+    margin-bottom: map.get($margins, 'section');
   }
 
   &__content-1,
   &__content-2 {
-    margin-bottom: (map-get($margins, 'typography') * 2);
+    margin-bottom: (map.get($margins, 'typography') * 2);
   }
 
   &__content-3,
   &__content-4,
   &__content-5 {
-    margin-bottom: map-get($margins, 'typography');
+    margin-bottom: map.get($margins, 'typography');
   }
 
   &__content-5 {
@@ -53,7 +55,7 @@
   }
 
   .container {
-    z-index: map-get($z-index, 'just-above-default');
+    z-index: map.get($z-index, 'just-above-default');
     position: relative;
   }
 }
@@ -61,7 +63,7 @@
 @include media($sm-max) {
   .part-2 {
     .btn {
-      margin-top: map-get($margins, 'typography');
+      margin-top: map.get($margins, 'typography');
     }
   }
 }
@@ -81,7 +83,7 @@
 
     &__content-4,
     &__content-5 {
-      margin-bottom: (map-get($margins, 'typography') * 2);
+      margin-bottom: (map.get($margins, 'typography') * 2);
     }
 
     &__content-4 {
@@ -140,14 +142,14 @@
     &__content-3 {
       @include span-columns(5);
 
-      margin-bottom: (map-get($margins, 'typography') * 2);
+      margin-bottom: (map.get($margins, 'typography') * 2);
     }
 
     &__img-1 {
       @include span-columns(7);
 
       position: absolute;
-      top: (map-get($margins, 'typography') * -1);
+      top: (map.get($margins, 'typography') * -1);
       right: 0;
       margin-right: 0;
     }
