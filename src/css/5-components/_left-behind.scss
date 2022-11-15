@@ -148,8 +148,8 @@
 @keyframes tv-noise {
   @for $i from 0 through $tv-noise-steps {
     #{math.div($i, $tv-noise-steps) * 100%} {
-      background-position: (math.random($tv-noise-width) * 1px)
-        (math.random($tv-noise-height) * 1px);
+      background-position: (math.random(math.div($tv-noise-width, 1px)) * 1px)
+        (math.random(math.div($tv-noise-height, 1px)) * 1px);
     }
   }
 }
