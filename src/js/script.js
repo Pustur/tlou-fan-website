@@ -9,10 +9,10 @@
   function applyClasses() {
     awardLists.forEach(list => {
       const activeEl = list.querySelector('.active');
-      const nextEl = activeEl.nextElementSibling || list.firstElementChild;
+      const nextEl = activeEl?.nextElementSibling ?? list.firstElementChild;
 
-      activeEl.classList.remove('active');
-      nextEl.classList.add('active');
+      activeEl?.classList.remove('active');
+      nextEl?.classList.add('active');
     });
   }
 
