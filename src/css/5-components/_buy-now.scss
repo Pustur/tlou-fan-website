@@ -1,8 +1,10 @@
+@use "sass:map";
+
 .buy-now {
   color: $black;
   background-color: $white;
-  padding-top: map-get($margins, 'section');
-  padding-bottom: map-get($margins, 'section');
+  padding-top: map.get($margins, 'section');
+  padding-bottom: map.get($margins, 'section');
 
   &__title {
     text-align: center;
@@ -46,7 +48,7 @@
         background-position: 100% 0;
 
         + li {
-          margin-top: (map-get($margins, 'typography') * 3);
+          margin-top: (map.get($margins, 'typography') * 3);
         }
 
         &:nth-child(even) {
@@ -58,8 +60,8 @@
     &__prices {
       @include clearfix;
 
-      margin-top: map-get($margins, 'typography');
-      margin-bottom: map-get($margins, 'typography');
+      margin-top: map.get($margins, 'typography');
+      margin-bottom: map.get($margins, 'typography');
       text-align: center;
 
       > li {
@@ -95,7 +97,7 @@
           }
 
           .buy-now__prices {
-            margin-right: map-get($margins, 'typography');
+            margin-right: map.get($margins, 'typography');
           }
         }
 
@@ -111,7 +113,7 @@
           }
 
           .buy-now__prices {
-            margin-left: map-get($margins, 'typography');
+            margin-left: map.get($margins, 'typography');
           }
         }
       }
@@ -120,7 +122,7 @@
     &__prices {
       > li {
         + li {
-          margin-top: (map-get($margins, 'typography') * 0.5);
+          margin-top: (map.get($margins, 'typography') * 0.5);
         }
       }
     }
@@ -133,13 +135,13 @@
     &__game-container {
       @include span-columns(7 of 7);
 
-      margin-bottom: map-get($margins, 'typography');
+      margin-bottom: map.get($margins, 'typography');
     }
   }
 }
 
 @include media($md-max) {
   .buy-now {
-    padding-bottom: (map-get($margins, 'section') * 1.5);
+    padding-bottom: (map.get($margins, 'section') * 1.5);
   }
 }

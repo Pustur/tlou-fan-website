@@ -1,9 +1,10 @@
+@use "sass:map";
 @use "sass:math";
 
 .left-behind {
   position: relative;
-  padding-top: (map-get($margins, 'section') * 2);
-  padding-bottom: (map-get($margins, 'section') * 2);
+  padding-top: (map.get($margins, 'section') * 2);
+  padding-bottom: (map.get($margins, 'section') * 2);
   background-image: url('/img/left-behind-bg-lg.jpg');
   background-size: cover;
   background-position: 60% 50%;
@@ -19,12 +20,12 @@
   }
 
   &__title {
-    margin-bottom: map-get($margins, 'typography');
-    margin-left: map-get($margins, 'offset');
+    margin-bottom: map.get($margins, 'typography');
+    margin-left: map.get($margins, 'offset');
   }
 
   &__btn {
-    margin-left: map-get($margins, 'offset') * 0.5;
+    margin-left: map.get($margins, 'offset') * 0.5;
   }
 
   &__tv-noise {
@@ -44,7 +45,7 @@
   }
 
   &__container {
-    margin-top: (map-get($margins, 'typography') * 2);
+    margin-top: (map.get($margins, 'typography') * 2);
   }
 
   &__content-2 {
@@ -52,11 +53,11 @@
   }
 
   &__content-3 {
-    margin-top: map-get($margins, 'typography');
+    margin-top: map.get($margins, 'typography');
   }
 
   .container {
-    z-index: map-get($z-index, 'just-above-default');
+    z-index: map.get($z-index, 'just-above-default');
     position: relative;
   }
 }
@@ -80,7 +81,7 @@
 
 @include media($md-min) {
   .left-behind {
-    padding-bottom: map-get($margins, 'section');
+    padding-bottom: map.get($margins, 'section');
 
     &__content-1 {
       @include span-columns(8);
@@ -95,7 +96,7 @@
       @include trbl(
         null,
         ((flex-grid(1, 12) + (flex-gutter() * math.div(14, 12))) * -1),
-        (map-get($margins, 'typography') * -1),
+        (map.get($margins, 'typography') * -1),
         null
       );
 
@@ -107,7 +108,7 @@
       @include span-columns(9);
       @include shift(2);
 
-      margin-top: (map-get($margins, 'typography') * 2);
+      margin-top: (map.get($margins, 'typography') * 2);
     }
   }
 }
@@ -124,7 +125,7 @@
     &__container {
       display: flex;
       align-items: center;
-      padding-bottom: map-get($margins, 'typography');
+      padding-bottom: map.get($margins, 'typography');
     }
 
     &__content-2 {
@@ -147,8 +148,8 @@
 @keyframes tv-noise {
   @for $i from 0 through $tv-noise-steps {
     #{math.div($i, $tv-noise-steps) * 100%} {
-      background-position: (random($tv-noise-width) * 1px)
-        (random($tv-noise-height) * 1px);
+      background-position: (math.random($tv-noise-width) * 1px)
+        (math.random($tv-noise-height) * 1px);
     }
   }
 }
