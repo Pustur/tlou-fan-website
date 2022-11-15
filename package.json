@@ -42,9 +42,8 @@
     "postcss": "8.3.5",
     "prettier": "2.3.2",
     "sass": "1.35.2",
-    "stylelint": "13.13.1",
-    "stylelint-config-prettier": "8.0.2",
-    "stylelint-config-standard": "22.0.0"
-  },
-  "dependencies": {}
+    "stylelint": "14.15.0",
+    "stylelint-config-prettier": "9.0.4",
+    "stylelint-config-standard-scss": "6.1.0"
+  }
 }
